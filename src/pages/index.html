@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preload" as="font" type="font/woff2" href="/public/JacquesFrancoisShadow-Regular.ttf"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/src/styles/landing-page.css">
+  <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/gh/gnat/surreal@main/surreal.js"></script>
+  <div class="wrapper">
+    <div class="line">
+      <span class="small-text before">kontak</span><span class="big-letter">t</span>
+    </div>
+    <div class="line">
+      <span class="big-letter">u</span><span class="small-text after">bytování</span>
+    </div>
+    <div class="line">
+      <span class="small-text before">gale</span><span class="big-letter">r</span><span
+        class="small-text after">ie</span>
+    </div>
+    <div class="line">
+      <span class="small-text before">jsme </span>
+      <span class="big-letter">n</span><span class="small-text after">ejlepší</span>
+    </div>
+    <div class="line">
+      <span class="big-letter">o</span><span class="small-text after">kolí</span>
+    </div>
+    <div class="line">
+      <span class="small-text before">co na</span><span class="big-letter">v</span><span
+        class="small-text after">štívit</span>
+    </div>
+    <script>
+      any('.line', me()).run(line => {
+        let width1 = 0
+        let width2 = 0
+        if (line.querySelector('.small-text.before')) {
+          width1 = me('.small-text.before', line).offsetWidth
+        }
+        if (line.querySelector('.small-text.after')) {
+          width2 = me('.small-text.after', line).offsetWidth
+        }
+        let width = (width2 - width1) / 2
+        console.log({width}, {width1}, {width2})
+        me(line).styles(`--shift: ${width}px`)
+        rAF(_ => {
+          me(line).addClass('loaded')
+        })
+      })
+    </script>
+  </div>
+</body>
+
+</html>

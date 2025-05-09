@@ -1,0 +1,11 @@
+@import "normalize.css";
+@import "typography.css";
+
+:root {
+  color-scheme: light dark;
+
+  --color-primary: light-dark(black, white);
+  --color-background: light-dark(white, black);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+}

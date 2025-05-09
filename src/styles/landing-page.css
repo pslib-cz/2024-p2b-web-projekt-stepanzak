@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Jacques Francois Shadow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/public/JacquesFrancoisShadow-Regular.ttf);
+}
+
+body {
+  min-block-size: 3000px;
+}
+
+.big-letter {
+  font-size: 70px;
+  font-family: "Jacques Francois Shadow", serif;
+  text-transform: uppercase;
+}
+
+.line {
+  font-family: "Jacques Francois Shadow";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (width < 900px) {
+
+
+  @keyframes reveal-slide {
+    from {
+      transform: translateX(0);
+      --current-shift: 0px;
+    }
+
+    to {
+      transform: translateX(calc(0px - var(--shift)));
+      --current-shift: var(--shift)
+    }
+  }
+
+  /* @keyframes reveal-slide-reverse { */
+  /*   to { */
+  /*     transform: translateX(0); */
+  /*   } */
+  /**/
+  /*   from { */
+  /*     transform: translateX(calc(0px - var(--shift))); */
+  /*   } */
+  /* } */
+
+  @keyframes reveal-appear {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+
+
+
+  .wrapper {
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .line {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    translate: var(--shift);
+  }
+
+  .line.loaded {
+    transition: translate 0.2s;
+
+    animation-timeline: scroll();
+    animation-name: reveal-slide;
+  }
+
+  .line:hover {
+    /* animation: reveal-slide 0.2s ease-in both; */
+    /* transform: translateX(calc(0px - var(--shift))); */
+    translate: var(--current-shift);
+
+
+    &>.small-text {
+      animation: reveal-appear ease-in forwards 0.2s;
+    }
+  }
+
+  .line:not(:hover) {
+    /* animation: reveal-slide-reverse 0.2s ease-in both; */
+
+    &>.small-text {
+      animation-timeline: scroll();
+      animation-name: reveal-appear;
+    }
+  }
+
+
+
+  .small-text {
+    font-size: 35px;
+    opacity: 0;
+  }
+}
