@@ -6,24 +6,28 @@
   src: url(/JacquesFrancoisShadow-Regular.ttf);
 }
 
-body {
-  min-block-size: 3000px;
-}
 
-.big-letter {
-  font-size: 70px;
-  font-family: "Jacques Francois Shadow", serif;
-  text-transform: uppercase;
-}
+
 
 .line {
   font-family: "Jacques Francois Shadow";
-  font-weight: 400;
-  font-style: normal;
 }
 
 @media (width < 900px) {
 
+  body {
+    min-block-size: 3000px;
+  }
+
+  .huge-title {
+    display: none;
+  }
+
+  .big-letter {
+    font-size: 70px;
+    font-family: "Jacques Francois Shadow", serif;
+    text-transform: uppercase;
+  }
 
   @keyframes reveal-slide {
     from {
@@ -87,7 +91,7 @@ body {
     translate: var(--current-shift);
 
 
-    &>.small-text {
+    & .small-text {
       animation: reveal-appear ease-in forwards 0.2s;
     }
   }
@@ -95,7 +99,7 @@ body {
   .line:not(:hover) {
     /* animation: reveal-slide-reverse 0.2s ease-in both; */
 
-    &>.small-text {
+    & .small-text {
       animation-timeline: scroll();
       animation-name: reveal-appear;
     }
@@ -106,5 +110,57 @@ body {
   .small-text {
     font-size: 35px;
     opacity: 0;
+  }
+}
+
+
+@media (width > 900px) {
+  .huge-title {
+    font-family: "Jacques Francois Shadow";
+    font-size: 15vw;
+    margin: 0;
+    text-align: center;
+  }
+
+  .line {
+    position: fixed;
+    font-size: 2.5rem;
+  }
+
+  .wrapper>.line:nth-of-type(1) {
+    top: 20vh;
+    left: 5rem;
+  }
+
+  .wrapper>.line:nth-of-type(2) {
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wrapper>.line:nth-of-type(3) {
+    top: 15vh;
+    right: 10rem;
+  }
+
+  .wrapper>.line:nth-of-type(4) {
+    bottom: 12vh;
+    left: 5rem;
+  }
+
+  .wrapper>.line:nth-of-type(5) {
+    bottom: 25vh;
+    left: 55%;
+    transform: translateX(-50%);
+  }
+
+  .wrapper>.line:nth-of-type(6) {
+    bottom: 18vh;
+    right: 5rem;
+  }
+
+  body {
+    min-height: 100vh;
+    align-content: center;
   }
 }
