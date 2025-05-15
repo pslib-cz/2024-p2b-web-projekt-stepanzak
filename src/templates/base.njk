@@ -8,12 +8,15 @@
   <link rel="preload" as="font" type="font/woff2" href="/JacquesFrancoisShadow-Regular.ttf" crossorigin="anonymous" />
   <link rel="stylesheet" href="/src/styles/style.css">
   <script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>
-  {% block header %}
+  {% block head %}
   {% endblock %}
 </head>
 
 <body>
 
+  {%block header%}
+  {% include "./header.njk" %}
+  {%endblock%}
   {% block body %}
   {% endblock %}
 

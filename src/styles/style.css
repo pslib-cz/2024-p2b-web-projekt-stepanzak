@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "typography.css";
+@import "header.css";
 
 :root {
   color-scheme: light dark;

@@ -1,14 +1,3 @@
-@font-face {
-  font-family: 'Jacques Francois Shadow';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(/JacquesFrancoisShadow-Regular.ttf);
-}
-
-
-
-
 .line {
   font-family: "Jacques Francois Shadow";
 }

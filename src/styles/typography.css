@@ -9,9 +9,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: 'Jacques Francois Shadow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/JacquesFrancoisShadow-Regular.ttf);
+}
+
+._fancyfont {
+  font-family: "Jacques Francois Shadow";
+}
+
 a {
   font-weight: 500;
-  color: var(--color-primary);
+  color: inherit;
   text-decoration: inherit;
 }
 
