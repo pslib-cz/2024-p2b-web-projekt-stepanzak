@@ -1,0 +1,40 @@
+{% extends "./src/templates/base.njk" %}
+{% set title="okolí"%}
+{%block head%}
+<link rel="stylesheet" href="/src/styles/places.css">
+{%endblock%}
+{%block body%}
+
+
+<main>
+
+  <h2 class="places__title _fancyfont">Kam na výlet z Turnova?</h2>
+  <div class="places">{%set places=[
+    {title: "Hrad Valdštejn", desc: "Středověká pevnost na skále s výhledem do Maloskalského údolí a magickou
+    atmosférou
+    dávných časů.", img: "valdstejn.jpg"},
+    {title: "Besedické skály", desc: "Labyrint pískovcových věží, skalních oken a vyhlídek, ideální pro milovníky
+    romantických procházek i dobrodružství.", img: "skaly.jpg"},
+    {title: "Rozhledna Dubecko", desc: "Elegantní věž na vrcholu kopce nabízí panoramatický pohled na Český ráj a
+    Krkonoše.", img: "rozhledna.jpg"},
+    {title: "Jeskyně Postojna", desc: "Skrytá pískovcová dutina v srdci Besedických skal, ideální pro krátké zastavení
+    s
+    nádechem tajemna.", img: "postojna.jpg"},
+    {title: "Kopicův statek", desc: "Půvabná roubená usedlost uprostřed lesa, známá svými skalními reliéfy vytesanými
+    do
+    okolních stěn.", img: "statek.jpg"}
+    ]%}
+    {% for place in places %}
+    <div class="place">
+      <div class="place__text">
+        <h3 class="place__title _fancyfont">{{ place.title }}</h3>
+        <p class="place__description">{{ place.desc }}</p>
+      </div>
+      <div class="place__picturewrapper"><img class="place__picture" src="/img/okoli/{{ place.img }}"
+          alt="{{ place.title }}" width="200px" height="150px" /></div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+{%endblock%}
