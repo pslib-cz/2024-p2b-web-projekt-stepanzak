@@ -1,0 +1,61 @@
+    @layer gallery, swiper;
+    @import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css") layer(swiper);
+
+    @layer gallery {
+      .swiper {
+        width: 100%;
+        height: 600px;
+        --swiper-theme-color: var(--color-primary);
+        --swiper-pagination-bullet-inactive-color: var(--color-background);
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-size: 1rem;
+        margin-top: 2rem;
+        display: grid;
+        gap: min(2rem, 5vh);
+      }
+
+      .swiper-controls {
+        height: 5em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: min(10rem, 5vw);
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: block;
+        position: initial;
+        margin-top: unset;
+      }
+
+      .swiper-pagination {
+        display: flex;
+        width: auto;
+        position: initial;
+      }
+
+
+      .swiper-slide .swiper-img-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+      }
+
+      .swiper-slide img {
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .swiper-pagination-bullet {
+        border-color: var(--color-primary);
+        border-width: 2px;
+        border-style: solid;
+      }
+    }
