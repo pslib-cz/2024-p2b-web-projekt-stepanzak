@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build --base=/2024-p2b-web-projekt-stepanzak/ && gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "devDependencies": {
     "@vituum/vite-plugin-nunjucks": "^1.1.0",
