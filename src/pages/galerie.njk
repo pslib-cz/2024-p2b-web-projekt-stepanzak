@@ -7,54 +7,55 @@
 
 
 <main>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+  <h2 class="_fancyfont">Podívejte se na fotky Turnova</h1>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
-      {%set files=[
-      {filename: "DSC09011.jpg", alt: "banka a kašna"},
-      {filename: "DSC09197.jpg", alt: "náměstí"},
-      {filename: "DSC_6496.jpg", alt: "náměstí a kytky"},
-      {filename: "DSC_6512.jpg", alt: "kostel"},
-      {filename: "DSC_6524.jpg", alt: "banka"},
-      {filename: "LA_IMG_6604-Pano.jpg", alt: "náměstí"},
-      {filename: "LA_IMG_6652.jpg", alt: "turnov večer"},
-      {filename: "LA_IMG_6661.jpg", alt: "turnov ráno"},
-      {filename: "LA_IMG_9356.jpg", alt: "kašna a kytky"},
-      {filename: "turnov-jaro.JPG", alt: "turnov na jaře"}
-      ]%}
-      {% for file in files %}
-      <div class="swiper-slide">
-        <div class="swiper-img-wrapper"><img src="/public/img/gallery/{{ file.filename }}" alt="{{ file.alt }}" /></div>
+        {%set files=[
+        {filename: "DSC09011.jpg", alt: "banka a kašna"},
+        {filename: "DSC09197.jpg", alt: "náměstí"},
+        {filename: "DSC_6496.jpg", alt: "náměstí a kytky"},
+        {filename: "DSC_6512.jpg", alt: "kostel"},
+        {filename: "DSC_6524.jpg", alt: "banka"},
+        {filename: "LA_IMG_6604-Pano.jpg", alt: "náměstí"},
+        {filename: "LA_IMG_6652.jpg", alt: "turnov večer"},
+        {filename: "LA_IMG_6661.jpg", alt: "turnov ráno"},
+        {filename: "LA_IMG_9356.jpg", alt: "kašna a kytky"},
+        {filename: "turnov-jaro.JPG", alt: "turnov na jaře"}
+        ]%}
+        {% for file in files %}
+        <div class="swiper-slide">
+          <div class="swiper-img-wrapper"><img src="/img/gallery/{{ file.filename }}" alt="{{ file.alt }}" /></div>
+        </div>
+        {% endfor %}
+
       </div>
-      {% endfor %}
-
+      <div class="swiper-controls">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
-    <div class="swiper-controls">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      cssMode: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      mousewheel: true,
-      keyboard: true,
-    });
-  </script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
 </main>
 
 {%endblock%}
