@@ -13,5 +13,4 @@ export default {
     }),
     nunjucks()
   ],
-  base: "/2024-p2b-web-projekt-stepanzak/",
 }

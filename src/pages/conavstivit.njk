@@ -1,0 +1,37 @@
+{% extends "./src/templates/base.njk" %}
+{% set title="co navštívit"%}
+{%block head%}
+<link rel="stylesheet" href="/src/styles/places.css">
+{%endblock%}
+{%block body%}
+
+
+<main>
+
+  <h2 class="places__title _fancyfont">Co v Turnově vidět?</h2>
+  <div class="places">{%set places=[
+    {title: "Zámek rohozec", desc: "Romantický zámek obklopený zelení, ideální pro odpolední výlet s dotekem historie a
+    elegance.", img: "zamek.jpg"},
+    {title: "Synagoga", desc: "Jedna z mála dochovaných židovských památek v regionu, s unikátní výzdobou a tichou
+    atmosférou.", img: "synagoga.jpg"},
+    {title: "Dlaskův statek", desc: "Výjimečný příklad lidové architektury, kde se zastavil čas a dřevo vypráví příběhy
+    starých řemesel.", img: "dlaskuvstatek.JPG"},
+    {title: "Hvězdárna", desc: "Moderně vybavená hvězdárna, která přibližuje vesmír nejen malým návštěvníkům.", img:
+    "hvezdarna_budova.jpg"},
+    {title: "Muzeum Českého ráje", desc: "Fascinující expozice kamenářství, šperkařství i historie Českého ráje pod
+    jednou střechou.", img: "muzeum.jpg"}
+    ]%}
+    {% for place in places %}
+    <div class="place">
+      <div class="place__text">
+        <h3 class="place__title _fancyfont">{{ place.title }}</h3>
+        <p class="place__description">{{ place.desc }}</p>
+      </div>
+      <div class="place__picturewrapper"><img class="place__picture" src="/img/turnov/{{ place.img }}"
+          alt="{{ place.title }}" width="200px" height="150px" /></div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+{%endblock%}

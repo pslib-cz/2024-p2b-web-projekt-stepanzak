@@ -6,9 +6,9 @@
 
 .places {
   display: grid;
-  gap: 2em;
+  gap: 3em;
   padding: 1em 2em;
-  max-width: 60rem;
+  max-width: 55rem;
   margin: auto;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .place__picturewrapper {
-  width: 300px;
+  max-width: 300px;
   height: 200px;
   min-width: 150px;
   align-content: center;
