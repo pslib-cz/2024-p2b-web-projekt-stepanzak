@@ -1,6 +1,7 @@
     @layer gallery, swiper;
     @import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css") layer(swiper);
 
+    /* tohle je trochu pofiderni ale jinak to neslo muze za to swiper trust me */
     @layer gallery {
       h2 {
         text-align: center;
