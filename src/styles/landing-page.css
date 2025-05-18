@@ -1,8 +1,19 @@
 .line {
   font-family: "Jacques Francois Shadow";
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 3px;
+  }
 }
 
-@media (width < 900px) {
+.scrolldown-arrow {
+  display: none;
+}
+
+
+@media (width<=900px) {
 
   body {
     min-block-size: 3000px;
@@ -85,20 +96,54 @@
     }
   }
 
-  .line:not(:hover) {
-    /* animation: reveal-slide-reverse 0.2s ease-in both; */
-
-    & .small-text {
-      animation-timeline: scroll();
-      animation-name: reveal-appear;
-    }
+  .line:not(:hover) .small-text {
+    animation-timeline: scroll();
+    animation-name: reveal-appear;
   }
-
-
 
   .small-text {
     font-size: 35px;
     opacity: 0;
+  }
+
+  @supports not ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+
+    .line.loaded,
+    .line:not(:hover) .small-text {
+      animation-timeline: unset;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    body {
+      min-block-size: unset;
+    }
+  }
+
+  @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+
+    @keyframes fade-out {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    .scrolldown-arrow {
+      display: block;
+      width: 100%;
+      position: fixed;
+      bottom: 2px;
+      background-color: light-dark(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7));
+      pointer-events: none;
+      animation-timeline: scroll();
+      animation-name: fade-out;
+    }
   }
 }
 
