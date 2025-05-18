@@ -1,5 +1,7 @@
 main {
   font-size: 1.3em;
+  margin: auto;
+  max-width: 50rem;
 }
 
 main p {
@@ -16,5 +18,8 @@ main p {
 }
 
 .ubytovani__map {
-  margin-inline-start: auto;
+  display: block;
+  max-width: 100%;
+  margin-inline: auto;
+  margin-block: 4rem;
 }
