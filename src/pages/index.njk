@@ -35,23 +35,35 @@ Turnov
       <span class="small-text before">co na</span><span class="big-letter">v</span><span
         class="small-text after">štívit</span></a>
   </div>
+
   <script>
-    any('.line', me()).run(line => {
-      let width1 = 0
-      let width2 = 0
-      if (line.querySelector('.small-text.before')) {
-        width1 = me('.small-text.before', line).offsetWidth
-      }
-      if (line.querySelector('.small-text.after')) {
-        width2 = me('.small-text.after', line).offsetWidth
-      }
-      let width = (width2 - width1) / 2
-      console.log({width}, {width1}, {width2})
-      me(line).styles(`--shift: ${width}px`)
-      rAF(_ => {
-        me(line).addClass('loaded')
+    // do not ask, do not touch
+    function calibrate() {
+      any('.line', me('.wrapper')).run(line => {
+        let width1 = 0
+        let width2 = 0
+        if (line.querySelector('.small-text.before')) {
+          width1 = me('.small-text.before', line).offsetWidth
+        }
+        if (line.querySelector('.small-text.after')) {
+          width2 = me('.small-text.after', line).offsetWidth
+        }
+        let width = (width2 - width1) / 2
+        console.log({width}, {width1}, {width2})
+        me(line).styles(`--shift: ${width}px`)
+        rAF(_ => {
+          me(line).addClass('loaded')
+        })
       })
-    })
+    }
+    document.fonts.onloadingdone = calibrate
+    window.onresize = calibrate
   </script>
 </div>
+<svg class="scrolldown-arrow" width="5em" height="5em" viewBox="0 0 24 24" fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M9 13L12 16M12 16L15 13M12 16V8M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
 {%endblock%}
