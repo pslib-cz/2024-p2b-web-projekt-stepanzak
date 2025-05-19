@@ -152,7 +152,7 @@
 @media (width > 900px) {
   .huge-title {
     font-family: "Jacques Francois Shadow";
-    font-size: 15vw;
+    font-size: min(15vw, 15em);
     margin: 0;
     text-align: center;
   }
