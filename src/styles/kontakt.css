@@ -1,6 +1,7 @@
 main {
   text-align: center;
   font-size: 1.3rem;
+  padding-block-end: 2rem;
 }
 
 .main__map {
@@ -14,4 +15,27 @@ main {
   gap: 1rem;
   max-width: 20rem;
   margin-inline: auto;
+}
+
+.contactform textarea[name="message"] {
+  min-height: 5em;
+}
+
+.contactform input[name="name"] {
+  min-height: 2.3em;
+}
+
+.contactform :is(textarea, input) {
+  border: 3px solid var(--color-primary);
+  border-radius: 10px;
+}
+
+.contactform__sendbutton {
+  width: fit-content;
+  margin-left: auto;
+  border: none;
+  border-radius: 1em;
+  padding: 0.5em;
+  background: var(--color-primary);
+  color: var(--color-background);
 }
